@@ -533,7 +533,7 @@ section {
   transition:
     opacity var(--duration-reveal) var(--ease-apple),
     transform var(--duration-reveal) var(--ease-apple);
-  will-change: opacity, transform;
+  /* will-change: opacity, transform; */
 }
 
 .hero-image.is-visible,
@@ -546,20 +546,18 @@ section {
 
 #about,
 #skills,
-#education,
-#contact {
+#education{
   opacity: 0;
   transform: translateY(var(--reveal-offset));
   transition:
     opacity var(--duration-reveal) var(--ease-apple),
     transform var(--duration-reveal) var(--ease-apple);
-  will-change: opacity, transform;
+  /* will-change: opacity, transform; */
 }
 
 #about.is-visible,
 #skills.is-visible,
-#education.is-visible,
-#contact.is-visible {
+#education.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -647,7 +645,7 @@ section {
     opacity: 1;
     transform: none;
     transition: none;
-    will-change: auto;
+    /* will-change: auto; */
   }
 
   .progress-fill,
@@ -655,7 +653,7 @@ section {
     width: var(--target-width);
     transition: none;
     transition-delay: 0ms;
-    will-change: auto;
+    /* will-change: auto; */
   }
 
   .timeline-card:hover,
