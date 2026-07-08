@@ -70,9 +70,9 @@
   --reveal-offset: 1.5rem;
 
   /* Progress bar fill targets */
-  --progress-backend: 60%;
-  --progress-frontend: 30%;
-  --progress-database: 40%;
+  --progress-backend: 0.6;
+  --progress-frontend: 0.3;
+  --progress-database: 0.4;
 }
 
 /* --------------------------------------------------------------------------
@@ -357,7 +357,7 @@ section {
 }
 
 .progress-fill {
-  width: 0;
+  width: 100%;
   height: 100%;
   border-radius: var(--radius-full);
   background: linear-gradient(
@@ -365,9 +365,9 @@ section {
     #0071e3 0%,
     #4a9eed 100%
   );
+  transform: scaleX(0);
   transform-origin: left center;
-  transition: width var(--duration-progress) var(--ease-apple);
-  will-change: width;
+  transition: transform 700ms cubic-bezier(.25,.1,.25,1);
 }
 
 .progress-fill.backend {
@@ -383,18 +383,18 @@ section {
 }
 
 .skills.is-visible .progress-fill.backend {
-  width: var(--progress-backend);
-  transition-delay: 150ms;
+  transform: scaleX(var(--progress-backend));
+  transition-delay: 100ms;
 }
 
 .skills.is-visible .progress-fill.frontend {
-  width: var(--progress-frontend);
-  transition-delay: 300ms;
+  transform: scaleX(var(--progress-frontend));
+  transition-delay: 200ms;
 }
 
 .skills.is-visible .progress-fill.database {
-  width: var(--progress-database);
-  transition-delay: 450ms;
+  transform: scaleX(var(--progress-database));
+  transition-delay: 300ms;
 }
 
 /* --------------------------------------------------------------------------
