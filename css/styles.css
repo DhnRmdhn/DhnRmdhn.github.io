@@ -591,9 +591,9 @@ section {
    Responsive — Mobile
    -------------------------------------------------------------------------- */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   :root {
-    --section-padding-y: 3rem;
+    --section-padding-y: 1.5rem;
   }
 
   .hero-inner {
@@ -647,15 +647,19 @@ section {
     transition: none;
     /* will-change: auto; */
   }
-
-  .progress-fill,
-  .skills.is-visible .progress-fill {
-    width: var(--target-width);
-    transition: none;
-    transition-delay: 0ms;
-    /* will-change: auto; */
+  .progress-fill {
+      transition:
+          width 800ms cubic-bezier(.25,.1,.25,1);
   }
-
+  .skills.is-visible .progress-fill.backend {
+      transition-delay: 250ms;
+  }
+  .skills.is-visible .progress-fill.frontend {
+      transition-delay: 400ms;
+  }
+  .skills.is-visible .progress-fill.database {
+      transition-delay: 550ms;
+  }
   .timeline-card:hover,
   .instagram-link:hover {
     transform: none;
